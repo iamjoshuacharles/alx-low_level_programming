@@ -1,1 +1,1 @@
-a script that compiles a C file and creates an executable named cisfun
+This C program prints Programming is like building a multilingual puzzle, followed by a new line
