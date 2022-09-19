@@ -1,1 +1,1 @@
-write a script that runs a C file through the processor and save the result into another file
+that script that compiles a C file but does not link
