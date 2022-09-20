@@ -1,1 +1,1 @@
-this is C program that prints the size of various types on the computer it is compiled and run
+a C program that prints exactly and that piece of art is useful" - Dora Korpar, 2015-10-19
