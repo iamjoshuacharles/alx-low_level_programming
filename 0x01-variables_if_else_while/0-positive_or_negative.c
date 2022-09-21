@@ -4,15 +4,12 @@
 
 #include <stdio.h>
 
-/*
+/**
  * main - Entry point
- *
- * Description: this program prints a random number
  *
  * Return: Always 0
  *
 */
-
 int main(void)
 {
 	int n;
