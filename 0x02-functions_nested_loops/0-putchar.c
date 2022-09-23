@@ -12,18 +12,13 @@
 int main(void)
 {
 
-	char ch[9] = "_putchar";
+	char ch[10] = "_putchar";
 	int i = 0;
-	char c;
 
-	while (i <= 8)
+	for (i = 0; i < 8; i++)
 	{
-		c = ch[i];
-		_putchar(c);
-		i++;
-
+		_putchar(ch[i]);
 	}
-
-		_putchar('\n');
-		return (0);
+	_putchar('\n');
+	return (0);
 }
