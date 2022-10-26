@@ -1,35 +1,30 @@
 #include "lists.h"
 
 /**
-* print_listint_safe - prints a list
-* @head: pointer to the list
-* Return: number of nodes
+* print_listint_safe - prints all the elements of a listint_t list.
+* @head: pointer to first node of a listint_t list.
+*
+* Return: a size_t number representing the amount of nodes in the list.
 */
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *new, *comp;
-	size_t count_new = 0, count_comp = 0;
+	size_t count = 0;
 
-	new = head;
-	comp = head;
-	while (new != NULL)
+	if (head == NULL)
+		return (0);
+
+	while (head != NULL)
 	{
-		while (count_new > count_comp)
+		count++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (head->next >= head)
 		{
-			if (new == comp)
-			{
-				printf("-> [%p] %d\n", (void *)new, new->n);
-				return (count_new);
-			}
-			count_comp++;
-			comp = comp->next;
+			printf("-> [%p] %d\n", (void *)head->next, (head->next)->n);
+			break;
 		}
-		comp = head;
-		count_comp = 0;
-		printf("[%p] %d\n", (void *)new, new->n);
-		count_new++;
-		new = new->next;
+		head = head->next;
 	}
-	return (count_new);
+
+	return (count);
 }
