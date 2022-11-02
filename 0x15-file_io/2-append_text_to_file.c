@@ -1,40 +1,30 @@
 #include "main.h"
-
 /**
-* append_text_to_file - Entry Point
-* @filename: file name
-* @text_content: text content
-* Return: 1
+* append_text_to_file - This function adds text at EOF
+* @filename: name of the file to append data to.
+* @text_content: data to append to file
+* Return: 1 if succesfull else -1 on err
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, wr, i = 0;
+	int fild = 0, chk = 0, i = 0;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
 
-	file = open(filename, O_RDWR | O_APPEND);
-	if (file == -1)
+	fild = open(filename, O_WRONLY | O_APPEND);
+	if (fild < 0)
 		return (-1);
 
-
-
-	while (text_content[i])
-		i++;
-
-	if (text_content == NULL)
+	if (text_content)
 	{
-		close(file);
-		return (1);
-	}
-	else
-	{
-		wr = write(file, text_content, i);
-	}
+		while (text_content[i])
+			i++;
 
-	if (wr == -1)
+		chk = write(fild, text_content, i);
+		if (chk < 0)
 		return (-1);
-
-	close(file);
+	}
+	close(fild);
 	return (1);
 }
